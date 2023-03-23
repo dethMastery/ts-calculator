@@ -2,15 +2,21 @@
   "name": "ts-calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist/src/calc.controller.js",
   "scripts": {
     "start": "node dist/app.js",
-    "build": "npx tsc",
-    "dev": "npx tsc && node dist/app.js"
+    "build": "tsc --build --force",
+    "dev": "tsc && node dist/app.js"
   },
+  "bin": {
+    "kalku": "./dist/app.js"
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [],
   "author": "dethz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "yargs": "^17.7.1"
   },
