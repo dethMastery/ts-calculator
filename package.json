@@ -1,0 +1,14 @@
+{
+  "name": "ts-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "npx tsc",
+    "dev": "npx tsc && node dist/app.js"
+  },
+  "keywords": [],
+  "author": "dethz",
+  "license": "ISC"
+}
