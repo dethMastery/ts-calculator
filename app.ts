@@ -18,7 +18,7 @@ const argv: any = yargs(process.argv.slice(2))
 if (argv._[0] != undefined) {
   cont.run(argv._[1], argv._[0], argv._[2])
 } else {
-  console.log('just run "kalku <opeartor> <no1> <no2>"');
+  console.log('just run "yarn dev <no1> <opeartor> <no2>"');
   console.log('operator like "add", "sum", "minus", "multiply", "divide", "+" , "-", "*", "x", "/"');
   
 }
