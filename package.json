@@ -1,7 +1,7 @@
 {
-  "name": "ts-calculator",
+  "name": "kalku",
   "version": "1.0.0",
-  "description": "",
+  "description": "just ts calculator",
   "main": "dist/src/calc.controller.js",
   "scripts": {
     "start": "node dist/app.js",
