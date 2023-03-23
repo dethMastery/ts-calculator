@@ -1,4 +1,4 @@
-# TS-Calculator (a.k.a kalku)
+# TS-Calculator
 
 this might be `first package` that I used 'TypeScript' & 'Yargs' to make an NPM Package sorry for any buggy :(
 
@@ -22,5 +22,7 @@ yarn
 ```zsh
 yarn dev <1st number> <operator> <2nd Number>
 ```
+
+If you not sure obout operator, just run `yarn dev` to see a little help from me :)
 
 :: Note - This repo is create for learning MVC on TypeScript. if its have any problems just feel free to contact me on [<me@suphakit.net>](mailto:me@suphakit.net)
