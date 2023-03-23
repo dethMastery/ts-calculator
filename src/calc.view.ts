@@ -1,17 +1,7 @@
-export default class calcView {
-  add(no1: number, no2: number): any {
-    return no1 + no2
-  }
+import calcModel from "./calc.model";
 
-  subt(no1: number, no2: number): any {
-    return no1 - no2
-  }
-
-  multiply(no1: number, no2: number): any {
-    return no1 * no2
-  }
-
-  divide(no1: number, no2: number): any {
-    return no1 / no2
+export default class kalView {
+  render(no1: number, no2: number, operator: string, res: number): void {
+    console.log('Result : ' + no1 + ' ' + operator + ' ' + no2 + ' = ' + res);
   }
 }

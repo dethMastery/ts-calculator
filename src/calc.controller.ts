@@ -1,29 +1,24 @@
-import * as yargs from 'yargs'
-import calcView from "./calc.view";
+import kalModel from "./calc.model";
+import kalView from "./calc.view";
 
-let calculate = new calcView()
+export default class kalOut {
+  private kalModel: kalModel
+  private kalLog: kalView
 
-yargs
-  .command('add <no1> <no2>', 'Adds two numbers', {}, (argv: any) => {
-    const result = calculate.add(argv.no1, argv.no2);
-    console.log(`Result: ${result}`);
-  })
-  .command('subtract <no1> <no2>', 'Subtracts two numbers', {}, (argv: any) => {
-    const result = calculate.subt(argv.no1, argv.no2);
-    console.log(`Result: ${result}`);
-  })
-  .command('multiply <no1> <no2>', 'Multiplies two numbers', {}, (argv: any) => {
-    const result = calculate.multiply(argv.no1, argv.no2);
-    console.log(`Result: ${result}`);
-  })
-  .command('divide <no1> <no2>', 'Divides two numbers', {}, (argv: any) => {
-    try {
-      const result = calculate.divide(argv.no1, argv.no2);
-      console.log(`Result: ${result}`);
-    } catch (err: any) {
-      console.log(err.message);
+  constructor(kalModel: kalModel, kalLog: kalView) {
+    this.kalModel = kalModel;
+    this.kalLog = kalLog;
+  }
+
+  run(operator: string, no1: number, no2: number): void {
+    if (operator == "add" || operator == "sum" || operator == "+") {
+      this.kalLog.render(no1, no2, '+', this.kalModel.add(no1, no2))
+    } else if (operator == "minus" || operator == "-") {
+      this.kalLog.render(no1, no2, '-', this.kalModel.subt(no1, no2))
+    } else if (operator == "*" || operator == "x" || operator == "multiply") {
+      this.kalLog.render(no1, no2, 'x', this.kalModel.multiply(no1, no2))
+    } else if (operator == "/" || operator == "divide") {
+      this.kalLog.render(no1, no2, '/', this.kalModel.divide(no1, no2))
     }
-  })
-  .demandCommand(1, 'Please specify a command')
-  .help()
-  .argv;
+  }
+}

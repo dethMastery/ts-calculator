@@ -1,13 +1,27 @@
-export default class calculatorInput {
-  no1: number
-  no2: number
-  operator: string
-  res: number
+export default class calcModel {
+  private no1: number
+  private no2: number
+  private operator: string
 
-  constructor (no1: number, no2: number, operator: string, res: number) {
-    this.no1 = no1
-    this.no2 = no2
-    this.operator = operator
-    this.res = res
+  constructor() {
+    this.no1
+    this.no2
+    this.operator
+  }
+
+  add(no1: number, no2: number): any {
+    return no1 + no2;
+  }
+
+  subt(no1: number, no2: number): any {
+    return no1 - no2;
+  }
+
+  multiply(no1: number, no2: number): any {
+    return no1 * no2;
+  }
+
+  divide(no1: number, no2: number): any {
+    return no1 / no2;
   }
 }
