@@ -7,7 +7,7 @@ import calculatorView from "./src/calc.view";
 import calculatorController from "./src/calc.controller";
 
 const argv: any = yargs(process.argv.slice(2))
-  .usage(`just run "yarn dev <no1> <operator> <no2>"`)
+  .usage(`just run "kalku <no1> <operator> <no2>"`)
   .option("tui", {
     describe: "open Terminal UI",
     type: "boolean",
@@ -29,7 +29,7 @@ if (argv.tui) {
   if (argv._[0] != undefined) {
     control.runCLI({no1, no2, operator});
   } else {
-    console.log('just run "yarn dev <no1> <operator> <no2>"');
+    console.log('just run "kalku <no1> <operator> <no2>"');
     console.log(
       'operator like "+" , "-", "x", "/"'
     );
