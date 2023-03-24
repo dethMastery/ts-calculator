@@ -1,4 +1,5 @@
 # TS-Calculator
+![npm version](https://img.shields.io/npm/v/kalku?color=whitesmoke&logoColor=%232e2f2f&style=for-the-badge)
 
 this might be `first package` that I used 'TypeScript' & 'Yargs' to make an NPM Package sorry for any buggy :(
 
