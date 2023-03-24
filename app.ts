@@ -21,13 +21,13 @@ let operator: string = argv._[1]
 
 const model = new calculatorModel();
 const cliView = new calculatorView();
-const cliControl = new calculatorController(model, cliView);
+const control = new calculatorController(model, cliView);
 
 if (argv.tui) {
-  console.log('hello');
+  control.runTUI()
 } else {
   if (argv._[0] != undefined) {
-    cliControl.runCLI({no1, no2, operator});
+    control.runCLI({no1, no2, operator});
   } else {
     console.log('just run "yarn dev <no1> <operator> <no2>"');
     console.log(
