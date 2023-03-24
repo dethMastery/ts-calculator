@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node dist/app.js",
     "build": "tsc --build --force",
-    "dev": "tsc && node dist/app.js"
+    "buid:dev": "tsc && node dist/app.js",
+    "dev": "ts-node app.ts",
+    "tui": "ts-node app.ts --tui"
   },
   "bin": {
     "kalku": "./dist/app.js"
