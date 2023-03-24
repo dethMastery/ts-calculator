@@ -21,6 +21,7 @@
   "author": "dethz",
   "license": "MIT",
   "dependencies": {
+    "typescript": "^5.0.2",
     "yargs": "^17.7.1"
   },
   "devDependencies": {
