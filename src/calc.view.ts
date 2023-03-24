@@ -1,7 +1,12 @@
-import calcModel from "./calc.model";
+interface renderCLI {
+  input1: number;
+  input2: number;
+  operator: string;
+  res: number;
+}
 
-export default class kalView {
-  render(no1: number, no2: number, operator: string, res: number): void {
-    console.log('Result : ' + no1 + ' ' + operator + ' ' + no2 + ' = ' + res);
+export default class calculatorView {
+  cliRender(data: renderCLI): void {
+    console.log("Result : " + data.input1 + " " + data.operator + " " + data.input2 + " = " + data.res);
   }
 }

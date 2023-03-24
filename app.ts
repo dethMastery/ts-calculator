@@ -1,24 +1,37 @@
 #!/usr/bin/env node
 
-import yargs from "yargs/yargs"
+import yargs from "yargs/yargs";
 
-import kalModel from "./src/calc.model";
-import kalView from "./src/calc.view";
-import kalCon from "./src/calc.controller";
-
-const model = new kalModel()
-const view = new kalView()
-const cont = new kalCon(model, view)
+import calculatorModel from "./src/calc.model";
+import calculatorView from "./src/calc.view";
+import calculatorController from "./src/calc.controller";
 
 const argv: any = yargs(process.argv.slice(2))
-                      .usage(
-                        `just run "kalku <no1> <operator> <no2>"`
-                      ).help().argv
+  .usage(`just run "yarn dev <no1> <operator> <no2>"`)
+  .option("tui", {
+    describe: "open Terminal UI",
+    type: "boolean",
+    default: false,
+  })
+  .help().argv;
 
-if (argv._[0] != undefined) {
-  cont.run(argv._[1], argv._[0], argv._[2])
+let no1: number = parseInt(argv._[0])
+let no2: number = parseInt(argv._[2])
+let operator: string = argv._[1]
+
+const model = new calculatorModel();
+const cliView = new calculatorView();
+const cliControl = new calculatorController(model, cliView);
+
+if (argv.tui) {
+  console.log('hello');
 } else {
-  console.log('just run "yarn dev <no1> <opeartor> <no2>"');
-  console.log('operator like "add", "sum", "minus", "multiply", "divide", "+" , "-", "*", "x", "/"');
-  
+  if (argv._[0] != undefined) {
+    cliControl.runCLI({no1, no2, operator});
+  } else {
+    console.log('just run "yarn dev <no1> <operator> <no2>"');
+    console.log(
+      'operator like "+" , "-", "x", "/"'
+    );
+  }
 }
